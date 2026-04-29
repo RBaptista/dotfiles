@@ -1,0 +1,21 @@
+hyprland
+waybar
+hyprshot
+rofi
+alacritty
+mako
+tokyo-theme-night-sddm
+hypridle
+hyprlock
+hyprpaper
+nmtui
+wlogout
+yazi
+networkmanager
+ttf-jetbrains-mono-nerd
+
+# Using yay to ensure you get the AUR packages (like the SDDM theme and Wlogout)
+yay -S hyprland waybar hyprshot rofi-lbonn-wayland alacritty mako \
+sddm-theme-tokyo-night hypridle hyprlock hyprpaper wlogout yazi
+
+ln -s ~/dotfiles/waybar ~/.config/waybar
