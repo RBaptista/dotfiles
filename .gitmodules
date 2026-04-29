@@ -1,0 +1,3 @@
+[submodule "system/sddm/tokyo-night-sddm"]
+	path = system/sddm/tokyo-night-sddm
+	url = https://github.com/rotasiz-vst/sddm-theme-tokyo-night.git

@@ -1,0 +1,19 @@
+configuration {
+    font: "JetBrainsMono NF 12, Noto Color Emoji 12";
+    show-icons: true;
+    terminal: "alacritty";
+}
+
+@theme "/dev/null" /* This clears the default purple theme for a clean look */
+
+* {
+    background-color: rgba(20, 20, 25, 0.7); /* Match your Waybar transparency */
+    text-color: #ffffff;
+    width: 600;
+}
+
+window {
+    padding: 20px;
+    border: 2px;
+    border-color: #00ffff; /* Match your power button accent */
+}
