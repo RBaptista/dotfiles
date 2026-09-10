@@ -71,19 +71,45 @@ for pkg in "${STOW_PACKAGES[@]}"; do
 done
 
 # ---------------------------------------------------------------------------
-# 5. bash helper (yazi cwd-on-exit function)
+# 5. zsh: default shell, yazi cwd-on-exit function, starship prompt, ls colors
 # ---------------------------------------------------------------------------
+if [[ "$SHELL" != *"/zsh" ]]; then
+    log "Setting zsh as your login shell (takes effect next login)..."
+    chsh -s /usr/bin/zsh "$USER" || warn "chsh failed, set it manually: chsh -s /usr/bin/zsh"
+fi
+
 MARKER="# >>> dotfiles: yazi cwd function >>>"
-if ! grep -qF "$MARKER" "$HOME/.bashrc" 2>/dev/null; then
-    log "Adding yazi 'y' function to ~/.bashrc..."
+if ! grep -qF "$MARKER" "$HOME/.zshrc" 2>/dev/null; then
+    log "Adding yazi 'y' function to ~/.zshrc..."
     {
         echo ""
         echo "$MARKER"
-        tail -n +2 "$DOTFILES_DIR/yazi_bash"   # skip the "in ~/.bashrc" comment line
+        tail -n +2 "$DOTFILES_DIR/yazi_bash"   # skip the "in ~/.zshrc" comment line
         echo "# <<< dotfiles: yazi cwd function <<<"
-    } >> "$HOME/.bashrc"
+    } >> "$HOME/.zshrc"
 else
-    log "yazi 'y' function already in ~/.bashrc, skipping."
+    log "yazi 'y' function already in ~/.zshrc, skipping."
+fi
+
+if ! grep -qF 'starship init zsh' "$HOME/.zshrc" 2>/dev/null; then
+    log "Adding starship init to ~/.zshrc..."
+    echo 'eval "$(starship init zsh)"' >> "$HOME/.zshrc"
+else
+    log "starship init already in ~/.zshrc, skipping."
+fi
+
+LS_MARKER="# >>> dotfiles: ls colors >>>"
+if ! grep -qF "$LS_MARKER" "$HOME/.zshrc" 2>/dev/null; then
+    log "Adding ls colors to ~/.zshrc..."
+    {
+        echo ""
+        echo "$LS_MARKER"
+        echo "alias ls='ls --color=auto'"
+        echo 'export LS_COLORS="di=1;36:ln=1;35:ex=1;32:*.tar=1;31:*.zip=1;31"'
+        echo "# <<< dotfiles: ls colors <<<"
+    } >> "$HOME/.zshrc"
+else
+    log "ls colors already in ~/.zshrc, skipping."
 fi
 
 # ---------------------------------------------------------------------------
