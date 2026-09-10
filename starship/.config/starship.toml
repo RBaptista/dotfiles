@@ -1,0 +1,50 @@
+# Starship prompt — Tokyo Night (cyan accent), to match hypr/waybar/rofi theme
+# https://starship.rs/config/
+
+format = """
+[](#00FFFF)\
+$os\
+$username\
+[](bg:#1a1b26 fg:#00FFFF)\
+$directory\
+[](fg:#1a1b26 bg:#24283b)\
+$git_branch\
+$git_status\
+[](fg:#24283b bg:#1a1b26)\
+$cmd_duration\
+[ ](fg:#1a1b26)
+$character"""
+
+[os]
+disabled = false
+style = "bg:#00FFFF fg:#1a1b26 bold"
+
+[username]
+show_always = false
+style_user = "bg:#00FFFF fg:#1a1b26 bold"
+style_root = "bg:#f7768e fg:#1a1b26 bold"
+format = "[ $user ]($style)"
+
+[directory]
+style = "bg:#1a1b26 fg:#00FFFF"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+style = "bg:#24283b fg:#7aa2f7"
+format = "[ $symbol$branch ]($style)"
+symbol = " "
+
+[git_status]
+style = "bg:#24283b fg:#f7768e"
+format = "[$all_status$ahead_behind ]($style)"
+
+[cmd_duration]
+style = "bg:#1a1b26 fg:#e0af68"
+format = "[  $duration ]($style)"
+min_time = 2000
+
+[character]
+success_symbol = "[❯](bold #00FFFF)"
+error_symbol = "[❯](bold #f7768e)"

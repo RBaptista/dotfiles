@@ -10,7 +10,7 @@
 set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-STOW_PACKAGES=(hypr waybar rofi alacritty wlogout yazi)
+STOW_PACKAGES=(hypr waybar rofi alacritty wlogout yazi starship)
 
 log()  { printf '\033[1;36m==>\033[0m %s\n' "$1"; }
 warn() { printf '\033[1;33m!!\033[0m %s\n' "$1"; }

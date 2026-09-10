@@ -1,4 +1,4 @@
-in ~/.bashrc
+# in ~/.zshrc
 
 # Type 'y' to open yazi, and when you quit, it stays in that directory
 function y() {

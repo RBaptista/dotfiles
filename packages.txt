@@ -15,3 +15,5 @@ wlogout
 yazi
 networkmanager
 ttf-jetbrains-mono-nerd
+zsh
+starship
