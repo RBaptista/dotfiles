@@ -1,0 +1,17 @@
+# One package per line. Comments (#) and blank lines are ignored.
+# Installed via yay, so both official-repo and AUR packages can live here.
+stow
+hyprland
+waybar
+hyprshot
+rofi-lbonn-wayland
+alacritty
+mako
+sddm-theme-tokyo-night
+hypridle
+hyprlock
+hyprpaper
+wlogout
+yazi
+networkmanager
+ttf-jetbrains-mono-nerd
