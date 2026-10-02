@@ -4,3 +4,8 @@ blur = false
 startup_mode="Maximized"
 [terminal.shell]
 program = "/usr/bin/zsh"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
