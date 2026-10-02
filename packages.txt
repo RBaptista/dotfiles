@@ -1,19 +1,62 @@
 # One package per line. Comments (#) and blank lines are ignored.
 # Installed via yay, so both official-repo and AUR packages can live here.
+# zsh prompt/plugin packages differ between CachyOS and Arch; install.sh adds those.
+
+# Core
 stow
+git
+
+# Hyprland desktop
 hyprland
-waybar
-hyprshot
-rofi-lbonn-wayland
-alacritty
-mako
-sddm-theme-tokyo-night
 hypridle
 hyprlock
 hyprpaper
+hyprshot
+xdg-desktop-portal-hyprland
+polkit-kde-agent
+waybar
+rofi
+rofimoji
+wl-clipboard
+wtype
+mako
 wlogout
-yazi
 networkmanager
+
+# Login screen (vendored tokyo-night-sddm theme needs the Qt5 bits)
+sddm
+qt5-quickcontrols2
+qt5-graphicaleffects
+qt5-svg
+
+# Audio, brightness, media keys
+pipewire
+pipewire-pulse
+wireplumber
+pavucontrol
+brightnessctl
+playerctl
+
+# Apps
+alacritty
+thunar
+yazi
+
+# Fonts
 ttf-jetbrains-mono-nerd
+noto-fonts
+noto-fonts-emoji
+
+# Shell
 zsh
-starship
+
+# Neovim (LazyVim) + tools it uses
+neovim
+lazygit
+ripgrep
+fd
+fzf
+tree-sitter-cli
+unzip
+gcc
+jdk21-openjdk

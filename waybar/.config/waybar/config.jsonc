@@ -8,9 +8,7 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/mode",
-        "sway/scratchpad",
-        "custom/media"
+        "hyprland/submap"
     ],
     "modules-center": [
         "hyprland/window"
@@ -32,11 +30,7 @@
     	"disable-scroll": true,
     	"all-outputs": false,
     	"on-click": "activate",
-    	"format": "{name}",
-    	"persistent-workspaces": {
-        	"eDP-1": [1, 2, 3, 4, 5],
-        	"HDMI-A-1": [6, 7, 8, 9, 10]
-    	}
+    	"format": "{name}"
     },
    "hyprland/window": {
    	 "format": "{}",
@@ -50,13 +44,6 @@
             "locked": "",
             "unlocked": ""
         }
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -125,18 +112,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
 	"format": "⏻ ",
